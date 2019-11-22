@@ -1,0 +1,272 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #010101;
+}
+@font-face {
+  font-family: PressStart;
+  src:'assets/powerup/font/font.ttf';
+}
+::-moz-selection{
+    background-color:Transparent;
+    color:#fff;
+    }
+::selection {
+    background-color:Transparent;
+    color:#fff;
+    }
+#gamelogo{
+      width: 95%;
+      max-width:400px;
+      margin:5% auto;
+}
+#gamelogo img {
+      width: 100%;
+    }
+    #startgame {
+      color: white;
+      font-family:  PressStart, sans-serif;
+      width: 95%;
+      max-width: 400px;
+      text-align: center;
+      margin: auto;
+    }
+    #startgame a {
+      color: #ffffff;
+      font-size: 2em;
+      text-decoration: none;
+      width: 100%:
+    }
+    #startgame a:hover {
+      color: #ffdddd;
+    }
+    #credits {
+
+      text-align: center;
+      position: absolute;
+      bottom: 30px;
+      left: 2.5vw;
+      width: 95%;
+        color: white;
+        font-family:  PressStart, sans-serif;
+    }
+#player {
+  width: 15vw;
+  height: 7.5vw;
+  min-width: 50px;
+  min-height: 25px;
+  background-image:url('assets/powerup/player.svg');
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  bottom: 2.5vh;
+  transition: .1s;
+}
+#leaderboard {
+  width: 95vw;
+  margin:50px auto;
+  color: white;
+  display:none;
+  font-family:  PressStart, sans-serif;
+}
+#leaderboard p {
+  color: white;
+  font-family:  PressStart, sans-serif;
+
+}
+.rocket {
+  width: 20px;
+  height: 40px;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  background-image:url('assets/powerup/bullet.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -50vh;
+}
+.enemybullet {
+  width: 15px;
+  height: 30px;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  background-image:url('assets/powerup/enemybullet.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -50vh;
+}
+.enemy {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  position: absolute;
+  top: 20vh;
+  left: 30vw;
+  user-drag: none;
+user-select: none;
+-moz-user-select: none;
+-webkit-user-drag: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+}
+#enemywrapper {
+  width: 80vw;
+  max-width: 800px;
+  position: absolute;
+  top: 10vh;
+  height: 80vh;
+}
+#score {
+  font-family:  PressStart, sans-serif;
+  color: white;
+  position: absolute;
+  top: 1.5vh;
+  left: 1.5vw;
+  font-size: 4.5vh;
+}
+#time {
+  font-family:  PressStart, sans-serif;
+  color: white;
+  position: absolute;
+  top: 1.5vh;
+  right: 1.5vw;
+  font-size: 4.5vh;
+}
+
+#caret {
+    border-right: 5em solid white;
+    margin-right: -0.5em;
+    position: relative;
+    top:1em;
+    font-size:.2em;
+    animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+#name {
+  width: 100vw;
+  font-family:  PressStart, sans-serif;
+  position: absolute;
+  font-size:7vh;
+  top: 60vh;
+  left:0;
+  background-color: rgba(0,0,0,0) !important;
+  text-transform:uppercase;
+  border: 0px;
+  display:none;
+  text-align: center;
+  color: transparent;
+  text-shadow: 0 0 white;
+}
+#button {
+  font-family:  PressStart, sans-serif;
+  text-transform:uppercase;
+  color: white;
+  border: 5px solid white;
+  padding: 10px;
+  position: absolute;
+  display:none;
+  background-color:black;
+  top: 75vh;
+  right: 30vw;
+}
+#name:focus{
+
+    border: 0px;
+    outline-width: 0px;
+}
+
+#banner {
+  font-family:  PressStart, sans-serif;
+  color: white;
+  position: absolute;
+  top: 46.5vh;
+  left:0;
+  right:0;
+  text-align: center;
+  width: 100vw;
+  font-size: 7vh;
+}
+@keyframes move {
+  0%, 24.999%,50%, 74.999%, 100% {
+    top: 0px;
+    left: 0px;
+  }
+  25%, 49.999% {
+    left:2vw;
+  }
+  75%, 99.999% {
+    left: -2vw;
+  }
+}
+@keyframes drift{
+  0% {
+    bottom: 100vh;
+      width:4px;
+      height: 4px;
+  }
+  100% {
+    bottom: 0vh;
+      width:4px;
+      height: 4px;
+  }
+}
+#sparkle {
+  width: 4px;
+  height: 4px;
+  animation: sparkle 4s linear infinite;
+}
+#sparklecont {
+  animation: drift 5s linear infinite;
+  position: absolute;
+  z-index: -5;
+}
+@keyframes sparkle{
+  0% {
+    opacity: 1;
+    background-color: red;
+  }
+  30% {
+    opacity: 0;
+    background-color: red;
+  }
+  33.333% {
+    opacity: 1;
+    background-color: blue;
+  }
+  63% {
+    opacity: 0;
+    background-color: blue;
+  }
+  66.66% {
+    opacity:1;
+    background-color: #ddd;
+  }
+  97%{
+    opacity: 0;
+    background-color: #ddd;
+  }
+
+}
